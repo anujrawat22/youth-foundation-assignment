@@ -27,8 +27,15 @@ exports.addBook = async (req, res) => {
 
 exports.getAllBooks = async (req, res) => {
   try {
-    const books = await BookModel.find();
-    res.status(200).json({ msg: "All Books", data: books });
+    const {limit} = req.query
+    if(limit){
+      const books = await BookModel.find().limit(limit);
+      res.status(200).json({ msg: "Books", data: books });
+    }else{
+
+      const books = await BookModel.find();
+      res.status(200).json({ msg: "All Books", data: books });
+    }
   } catch (error) {
     res.status(500).send({ msg: error.message });
   }
