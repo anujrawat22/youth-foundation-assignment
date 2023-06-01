@@ -17,7 +17,7 @@ exports.getBook = async (req, res) => {
 exports.addBook = async (req, res) => {
   try {
     const { bookName, authorName } = req.body;
-    const book = await new BookModel(bookName, authorName);
+    const book = await new BookModel({bookName, authorName});
     book.save();
     res.status(200).send({ msg: "New Book Added" });
   } catch (error) {
@@ -28,7 +28,7 @@ exports.addBook = async (req, res) => {
 exports.getAllBooks = async (req, res) => {
   try {
     const books = await BookModel.find();
-    res.status(200).send({ msg: "All Books", data: books });
+    res.status(200).json({ msg: "All Books", data: books });
   } catch (error) {
     res.status(500).send({ msg: error.message });
   }

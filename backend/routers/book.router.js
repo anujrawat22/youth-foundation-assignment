@@ -3,7 +3,7 @@ const { getBook, addBook, getAllBooks, deletedBook, updateBook } = require("../c
 
 const BookRouter = express.Router()
 
-BookRouter.get("/:id",getBook)
+BookRouter.get("/search/:id",getBook)
 
 BookRouter.post("/addbook",addBook)
 
