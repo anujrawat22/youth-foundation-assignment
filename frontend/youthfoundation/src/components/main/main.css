@@ -1,0 +1,156 @@
+#container{
+    width: 100%;
+    height: 100%;
+    /* border: 1px solid blue; */
+    padding:2% 1%;
+    box-sizing: border-box;
+}
+
+.firstchild{
+  /* border: 1px solid black; */
+  height: 40%;
+  border-radius: 5px;
+  background: linear-gradient(to bottom right, #00c3cc 10%, rgb(125,42,231) 80%);
+  display: flex;
+  flex-direction: column;
+justify-content: space-between;
+}
+
+#heading_div{
+    display: flex;
+    /* border: 1px solid red; */
+    justify-content: space-between;
+}
+
+#heading_div>:nth-child(1){
+    width: 25%;
+    height: 100%;
+    /* border: 1px solid blue; */
+}
+
+
+#heading_div>:nth-child(2){
+    width: 50%;
+    height: 100%;
+    /* border: 1px solid blue; */
+    color:#e8f6fb;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+#heading_div>:nth-child(2)>h1{
+    margin: 3%;
+    letter-spacing: 1px;
+}
+
+#heading_div>:nth-child(3){
+    width: 15%;
+    height: 100%;
+    /* border: 1px solid blue; */
+    padding: 1% 3%;
+    display: flex;
+    gap:5%
+}
+
+#custom_buttons>:nth-child(1){
+height: 40px;
+width: 100px;
+border: none;
+color: white;
+box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+background-color: transparent;
+border-radius: 5px;
+}
+
+#custom_buttons>:nth-child(2){
+    height: 40px;
+    width: 80px;
+    border: none;
+    color: white;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    background-color: transparent;
+    border-radius: 5px;
+    }
+
+#input_div{
+    width: 100%;
+    height: 20%;
+    /* border: 1px solid black; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#input_div>input{
+    width: 45%;
+    margin: auto;
+    height: 70%;
+    border-radius: 5px;
+    border: none;
+    padding: 0 2%;
+}
+
+#items{
+    width: 100%;
+    height: auto;
+    display: flex;
+    width: 85%;
+    margin: auto;
+    /* border: 1px solid red; */
+    justify-content: space-between;
+}
+
+
+
+.svg_main{
+    width: 10%;
+    font-size: small;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 0%;
+}
+
+.svg{
+    background-color: white;
+    border-radius:50% ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    width: 50px;
+}
+
+.svg:hover{
+    cursor: pointer;
+}
+
+#secondchild{
+    /* border: 1px solid red; */
+    margin-top: 5%;
+    height: 250px;
+}
+
+#bookcards{
+    display: flex;
+    overflow: hidden;
+height: 65%;
+overflow: hidden;
+justify-content: space-around; 
+box-sizing: border-box;
+}
+
+
+
+.images{
+    object-fit: cover;
+    height: 100%;
+    width: 18%;
+    box-sizing: border-box;
+}
+.images:hover{
+    cursor: pointer;
+}

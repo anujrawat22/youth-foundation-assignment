@@ -1,0 +1,32 @@
+body {
+  font-family: "Canva Sans", "Noto Sans Variable", "Noto Sans", -apple-system,
+    BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+}
+
+#book_container {
+  width: 100%;
+  height: auto;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(5, 600px);
+  overflow: scroll;
+  row-gap: 50px;
+  padding: 5% 1%;
+  justify-content: center;
+}
+
+#book_container > div {
+  height: auto;
+}
+
+.loader {
+  /* border: 1px solid red; */
+  margin: auto;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  justify-content: center;
+  padding-top: 5%;
+}
