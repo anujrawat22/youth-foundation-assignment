@@ -16,8 +16,8 @@ exports.getBook = async (req, res) => {
 
 exports.addBook = async (req, res) => {
   try {
-    const { bookName, authorName } = req.body;
-    const book = await new BookModel({bookName, authorName});
+    const { bookName, authorName,description,poster } = req.body;
+    const book = await new BookModel({bookName, authorName,poster,description});
     book.save();
     res.status(200).send({ msg: "New Book Added" });
   } catch (error) {
@@ -52,11 +52,13 @@ exports.deletedBook = async (req, res) => {
 exports.updateBook = async (req, res) => {
   try {
     const { id } = req.params;
-    const { bookName, authorName } = req.body;
+    const {bookName, authorName,description,poster } = req.body;
     const book = await BookModel.findById(id);
     if (book) {
       book.bookName = bookName;
       book.authorName = authorName;
+      book.description = description
+      book.poster = poster
       await book.save();
     } else {
       res.status(404).send({ msg: `No book with id - ${id} found` });
