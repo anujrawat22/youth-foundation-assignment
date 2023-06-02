@@ -7,6 +7,7 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import "./ImgMediaCard.css"
 
 export default function ImgMediaCard({ item, fetchData, handleopen }) {
   const navigate = useNavigate();
@@ -27,38 +28,55 @@ export default function ImgMediaCard({ item, fetchData, handleopen }) {
       });
   };
   return (
-    <Card sx={{ maxWidth: 300 }} key={item.id} height="auto">
-      <CardMedia
-        component="img"
-        alt="green iguana"
-        height="300"
-        image={item.poster}
-      />
-      <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
-          {item.bookName}
-        </Typography>
-        <Typography variant="body2" color="text.secondary">
-          {item.description}
-        </Typography>
-      </CardContent>
-      <CardActions>
-        <Button size="small" variant="outlined" onClick={()=>{
-            handleEdit(item._id)
-        }}>
-          Edit
-        </Button>
+    // <Card sx={{ maxWidth: 300 }} key={item.id} height="auto">
+    //   <CardMedia
+    //     component="img"
+    //     alt="green iguana"
+    //     height="300"
+    //     image={item.poster}
+    //   />
+    //   <CardContent>
+    //     <Typography gutterBottom variant="h5" component="div">
+    //       {item.bookName}
+    //     </Typography>
+    //     <Typography variant="body2" color="text.secondary">
+    //       {item.description}
+    //     </Typography>
+    //   </CardContent>
+    //   <CardActions>
+    //     <Button size="small" variant="outlined" onClick={()=>{
+    //         handleEdit(item._id)
+    //     }}>
+    //       Edit
+    //     </Button>
 
-        <Button
-          size="small"
-          variant="contained"
-          onClick={() => {
-            handleDelete(item._id);
-          }}
-        >
-          Delete
-        </Button>
-      </CardActions>
-    </Card>
+    //     <Button
+    //       size="small"
+    //       variant="contained"
+    //       onClick={() => {
+    //         handleDelete(item._id);
+    //       }}
+    //     >
+    //       Delete
+    //     </Button>
+    //   </CardActions>
+    // </Card>
+
+    <div id="card">
+      <img src={item.poster} alt="img" className="poster"/>
+      <div id="card_body">
+        <h2 className="book">{item.bookName}</h2>
+        <h5>Author : <span>{item.authorName}</span> </h5>
+        <p>{item.description}</p>
+      </div>
+      <div id="card_footer">
+<Button variant="outlined" onClick={()=>{
+  handleEdit(item._id)
+}}>Edit</Button>
+      <Button variant="contained" onClick={()=>{
+        handleDelete(item._id)
+      }}>Delete</Button>
+      </div>
+    </div>
   );
 }
