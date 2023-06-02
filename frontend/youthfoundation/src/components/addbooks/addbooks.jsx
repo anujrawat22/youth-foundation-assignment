@@ -22,11 +22,12 @@ const Addbooks = () => {
         showConfirmButton: false,
         timer: 1500
       })
+      setFormData({bookName: '',authorName : '',description : '',poster : ''})
     }).catch((err)=>console.log(err))
   };
   return (
     <div id="addbooks_container">
-      <form onSubmit={handleformsubmit}>
+      <form onSubmit={handleformsubmit} id="addbook_form">
         <label for="authorName">Author</label>
         <input
           type="text"
