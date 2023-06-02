@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./main.css";
 import axios from "axios";
+import { Box, CircularProgress } from "@mui/material";
 const Main = () => {
   const [data,setData] = useState([])
   const title = [
@@ -126,7 +127,7 @@ const Main = () => {
           <input type="text" placeholder="Search your book " />
         </div>
         <div id="items">
-          {svg.length > 0 &&
+          {svg.length> 0 &&
             svg.map((el, i) => {
               return (
                 <div style={{ color: `${color[i]}`}} className="svg_main">
@@ -144,11 +145,14 @@ const Main = () => {
       <h4>You Might want to Read</h4>
       <div id="bookcards">
         {
-          data.length && data.map((el)=>{
+          data.length>0 ? data.map((el)=>{
             return (
               <img src={el.poster} alt="img" className="images" />
             )
           })
+          :  <Box sx={{ display: 'flex' }}>
+          <CircularProgress />
+        </Box>
         }
       </div>
     </div>
